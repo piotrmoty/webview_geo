@@ -3,7 +3,7 @@
 
 <body>
 
-<button onclick="getLocationOrErrorWithOptions()">Get location</button><br><br><br>
+<button onclick="setTimeout(getLocationOrErrorWithOptions(), 3000)">Get location</button><br><br><br>
 <p id="loc"></p>
 
 <script>
@@ -40,7 +40,7 @@ function showError(error) {
   x.innerHTML = "Got error.<br> " + JSON.stringify(error);
 }
 
-setTimeout(getLocationOrErrorWithOptions(), 3000);
+//setTimeout(getLocationOrErrorWithOptions(), 3000);
 
 </script>
   
