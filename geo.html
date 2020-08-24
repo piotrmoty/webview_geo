@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
-<body onload="getLocation();">
 
-<p id="loc"></p>
-
+<head>
 <script>
 
 var x = document.getElementById("loc");
+var options = {
+  timeout: 5000,
+  maximumAge: 0
+};
 
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function getLocationOrErrorWithOptions() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError, options);
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -21,7 +31,18 @@ function showPosition(position) {
   "<br>Longitude: " + position.coords.longitude;
 }
 
-</script>
+function showError(error) {
+  x.innerHTML = "Error: " + JSON.stringify(error);
+}
 
+</script>
+</head>
+  
+<body onload="getLocation();">
+
+<button onclick="getLocationOrErrorWithOptions()">Get location</button><br><br><br>
+
+<p id="loc"></p>
+  
 </body>
 </html>
