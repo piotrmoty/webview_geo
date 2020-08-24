@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<body onload="getLocation();">
+
+<button onclick="getLocationOrErrorWithOptions()">Get location</button><br><br><br>
+<p id="loc"></p>
+
 <script>
 
 var x = document.getElementById("loc");
@@ -36,13 +40,6 @@ function showError(error) {
 }
 
 </script>
-</head>
-  
-<body onload="getLocation();">
-
-<button onclick="getLocationOrErrorWithOptions()">Get location</button><br><br><br>
-
-<p id="loc"></p>
   
 </body>
 </html>
