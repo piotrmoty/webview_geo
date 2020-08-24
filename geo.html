@@ -10,6 +10,7 @@
 
 var x = document.getElementById("loc");
 var options = {
+  enableHighAccuracy: true,
   timeout: 50000,
   maximumAge: 0
 };
@@ -36,7 +37,7 @@ function showPosition(position) {
 }
 
 function showError(error) {
-  x.innerHTML = "Got error<br> " + JSON.stringify(error);
+  x.innerHTML = "Got error.<br> " + JSON.stringify(error);
 }
 
 setTimeout(getLocationOrErrorWithOptions(), 3000);
