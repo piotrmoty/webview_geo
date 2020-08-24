@@ -36,7 +36,7 @@ function showPosition(position) {
 }
 
 function showError(error) {
-  x.innerHTML = "Got error: " + JSON.stringify(error);
+  x.innerHTML = "Got error<br> " + JSON.stringify(error);
 }
 
 setTimeout(getLocationOrErrorWithOptions(), 3000);
