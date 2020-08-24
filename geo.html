@@ -10,7 +10,7 @@
 
 var x = document.getElementById("loc");
 var options = {
-  timeout: 5000,
+  timeout: 50000,
   maximumAge: 0
 };
 
@@ -39,7 +39,7 @@ function showError(error) {
   x.innerHTML = "Got error: " + JSON.stringify(error);
 }
 
-getLocationOrErrorWithOptions();
+setTimeout(getLocationOrErrorWithOptions(), 3000);
 
 </script>
   
