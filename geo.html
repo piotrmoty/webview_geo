@@ -2,7 +2,11 @@
 <html>
 <body onload="getLocation();">
 
+<p id="loc"></p>
+
 <script>
+
+var x = document.getElementById("loc");
 
 function getLocation() {
   if (navigator.geolocation) {
