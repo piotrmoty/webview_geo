@@ -40,7 +40,8 @@ function showError(error) {
   x.innerHTML = "Got error.<br> " + JSON.stringify(error);
 }
 
-setTimeout(getLocationOrErrorWithOptions, 500);
+getLocationOrErrorWithOptions();
+//setTimeout(getLocationOrErrorWithOptions, 500);
 
 </script> 
 </body>
